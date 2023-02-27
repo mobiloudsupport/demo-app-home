@@ -10,13 +10,14 @@
 
 <body>
 
-	<form onsubmit='loadConfiguration(); prevent default;'>
+	<form onsubmit='loadConfiguration(event);'>
 		<input id="configuration-id" type="text" value="" />
 		<input type="submit" value="Load demo" />
 	</form>
 	
 	<script>
-		function loadConfiguration() {
+		function loadConfiguration(e) {
+			e.preventDefault();
 			let configurationId = document.getElementById("configuration-id").value;
 			if(configurationId) {
 				selectConfigurationButton.performClick(configurationId);

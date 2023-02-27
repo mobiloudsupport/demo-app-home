@@ -18,11 +18,15 @@
 	<script>
 		function loadConfiguration(e) {
 			e.preventDefault();
-			let configurationId = document.getElementById("configuration-id").value;
-			if(configurationId) {
-				selectConfigurationButton.performClick(configurationId);
-			} else {
-				alert("Please provide a configuration ID");
+			try {
+				let configurationId = document.getElementById("configuration-id").value;
+				if(configurationId) {
+					selectConfigurationButton.performClick(configurationId);
+				} else {
+					alert("Please provide a configuration ID");
+				}
+			} catch (e) {
+				alert(e.message);
 			}
 			
 			return false;

@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+
+</head>
+
+<body>
+
+	<form onsubmit='loadConfiguration()'>
+		<input id="configuration-id" type="text" value="" />
+	</form>
+	
+	<script>
+		function loadConfiguration() {
+			let configurationId = document.getElementById("configuration-id").value;
+			if(configurationId) {
+				selectConfigurationButton.performClick(configurationId);
+			} else {
+				alert("Please provide a configuration ID");
+			}
+		}
+	</script>
+
+</body>
+</html>
